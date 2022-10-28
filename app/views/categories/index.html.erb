@@ -1,0 +1,23 @@
+ 
+
+<% @categories.each do |c| %>
+    <div class="table-container">
+        <table class="table is-bordered is-fullwidth">
+            <tbody>
+                <tr class ="test">
+                    <td><%=c.title%></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td  class = "details-container"><%=c.details%></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr class ="test">
+                    <td><%= link_to "Show Tasks", c %> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<% end %>

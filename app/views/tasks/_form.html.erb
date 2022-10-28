@@ -1,0 +1,32 @@
+<%= form_with scope: :task, url: category_tasks_path(@category) do |form| %>
+    <div class="field">
+        <label class="label"><%= form.label :title %></label>
+        <div class="control">
+            <%= form.text_field :title, class: "input is-s", placeholder: "New Task" %>
+        </div>
+    </div>
+    <div class="field">
+        <label class="label"><%= form.label :details %></label>
+        <div class="control">
+            <%= form.text_field :details, class: "input is-s", placeholder: "Task Details" %>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label"><%= form.label :deadline %></label>
+        <div class="control">
+            <%= form.date_field :deadline, value: form.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
+        </div>
+    </div>
+    
+    <div class="field is-grouped">
+        <p class="control">
+            <a>
+                <%= form.submit "Create Task", class: "button is-link" %>
+            </a>
+            <a>
+                <%= link_to "Back", categories_path, class: "button is-link" %>
+            </a>
+        </p>
+    </div>
+<% end %>

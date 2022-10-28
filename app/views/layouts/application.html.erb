@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProjectJournal</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+
+  <body>
+    <nav class="navbar is-spaced has-background-primary">
+      <% if user_signed_in? %>
+        <div class="navbar-start">
+          <a class="navbar-item">
+            <%= link_to "Home", categories_path, class:"navbar-item" %>  
+          </a>
+          <a class="navbar-item">
+              <%= link_to "New Category", new_category_path, class:"navbar-item" %>
+          </a>
+          <a class="navbar-item">
+              <%= link_to "Tasks for today", "/today", class:"navbar-item" %>
+          </a>
+          <p class="navbar-item">
+              <%= Date.current %>
+          </p>
+        </div>
+
+        <div class="navbar-end">
+            <%= link_to "Sign out", destroy_user_session_path, 
+                                method: :delete, class:"navbar-item" %>
+            <%= link_to "Edit Profile", edit_user_registration_path, class:"navbar-item" %>
+        </div>
+        <% else %>
+        <div class="navbar-start">
+            <a class="navbar-item">
+                Home
+            </a>
+        </div>
+        <div class="navbar-end">
+            <%=  %>
+            <%= link_to "Sign up", new_user_registration_path, class:"navbar-item" %>
+            <%= link_to "Sign in", new_user_session_path, class:"navbar-item" %>
+        </div>
+      <% end %>
+    </nav>
+
+          <%= yield %>
+          <p class ="notice"> <%= notice %></p>
+          <p class ="alert"> <%= alert %></p>
+    
+  </body>
+</html>

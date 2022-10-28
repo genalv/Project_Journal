@@ -1,0 +1,21 @@
+    <p>
+        <strong>Tasks:</strong>
+        <%= task.title %>
+    </p>
+
+    <p>
+        <strong>Details:</strong>
+        <%= task.details %>
+    </p>
+
+       <p>
+        <strong>Deadline:</strong>
+        <%= task.deadline %>
+    </p>
+
+    <p>
+        <%= link_to 'Delete', [task.category, task],
+                                method: :delete,
+                                data: { confirm: "Are you sure?" } %>
+    </p>
+    <br>

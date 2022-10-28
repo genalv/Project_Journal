@@ -1,0 +1,23 @@
+<% @due_today.each do |test| %>    
+    <p>
+        <strong>Category:</strong>
+        <%= test.category.title %>
+    </p>
+    <p>
+        <strong>Tasks:</strong>
+        <%= test.title %>
+    </p>
+
+    <p>
+        <strong>Details:</strong>
+        <%= test.details %>
+    </p>
+
+    <p>
+        <strong>Deadline:</strong>
+        <%= test.deadline %>
+    </p>
+<% end %>
+            <a>
+                <%= link_to "Back", categories_path, class: "button is-link" %>
+            </a>

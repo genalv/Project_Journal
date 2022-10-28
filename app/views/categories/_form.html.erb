@@ -1,0 +1,31 @@
+<div class="form-container">
+        <%= form_with model: category do |form| %>
+        <div class="field">
+            <label class="label"><%= form.label "New Category" %></label>
+            <div class="control">
+                <%= form.text_field :title, class: "input is-s", placeholder: "New Category" %>
+            </div>
+        </div>
+        <% category.errors.full_messages_for(:title).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+
+        <div class="field">
+            <label class="label"><%= form.label :details %></label>
+            <div class="control">
+                <%= form.text_field :details, class: "textarea"%>
+            </div>
+        </div>
+        <% category.errors.full_messages_for(:details).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+
+        <div class="field is-grouped">
+            <div class="control">
+                <p>
+                    <%= form.submit "Create Category", class: "button is-link" %>
+                </p>
+            </div>
+        </div>
+    </div>
+<% end %>
