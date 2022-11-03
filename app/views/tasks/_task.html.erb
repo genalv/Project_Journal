@@ -1,21 +1,27 @@
-    <p>
-        <strong>Tasks:</strong>
-        <%= task.title %>
-    </p>
+<br><br>
 
-    <p>
-        <strong>Details:</strong>
-        <%= task.details %>
-    </p>
-
-       <p>
-        <strong>Deadline:</strong>
-        <%= task.deadline %>
-    </p>
-
-    <p>
-        <%= link_to 'Delete', [task.category, task],
-                                method: :delete,
-                                data: { confirm: "Are you sure?" } %>
-    </p>
-    <br>
+<center>
+    <div class = "e-container">
+        <table class = "table is-fullwidth">
+            <thead>
+                <strong><tr>
+                    <td> Task </td>
+                    <td> Details </td>
+                    <td> Deadline </td>
+                    <td> </td>
+                <tr></strong>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class> <%= task.title %> </td>
+                    <td class> <%= task.details %> </td>
+                    <td class> <%= task.deadline %> </td>
+                    <td class>  <%= link_to "Edit", edit_category_task_path(@category, task) %>
+                                <%= link_to 'Delete', [task.category, task],
+                                        method: :delete,
+                                        data: { confirm: "Are you sure?" } %> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</center>

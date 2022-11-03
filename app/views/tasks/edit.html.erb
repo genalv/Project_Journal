@@ -1,0 +1,19 @@
+<div class = "f-container">
+<%= form_with model: [ @category, @task] do |form| %>
+      <p>
+        <%= form.label :task, class: "edit-task-label" %><br>
+        <%= form.text_field :task, class: "edit-task-field" %>
+      </p>
+      <p>
+        <%= form.label :details, class: "edit-task-label" %><br>
+        <%= form.text_field :details, class: "edit-task-field" %>
+      </p>
+      <p>
+        <%= form.label :deadline, class: "edit-task-label" %><br>
+        <%= form.date_field :deadline, class: "edit-task-field" %>
+      </p>
+      <p>
+        <%= form.submit class: "edit-task-submit" %>
+      </p>
+    <% end %>
+</div>

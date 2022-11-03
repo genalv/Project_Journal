@@ -1,9 +1,9 @@
 <div class="form-container">
         <%= form_with model: category do |form| %>
         <div class="field">
-            <label class="label"><%= form.label "New Category" %></label>
+            <label class="label"><%= form.label "Category Title" %></label>
             <div class="control">
-                <%= form.text_field :title, class: "input is-s", placeholder: "New Category" %>
+                <%= form.text_field :title, class: "input is-s", placeholder: "Category Title" %>
             </div>
         </div>
         <% category.errors.full_messages_for(:title).each do |message| %>
@@ -23,7 +23,7 @@
         <div class="field is-grouped">
             <div class="control">
                 <p>
-                    <%= form.submit "Create Category", class: "button is-link" %>
+                    <%= form.submit "Submit", class: "button is-link" %>
                 </p>
             </div>
         </div>

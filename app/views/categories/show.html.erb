@@ -1,16 +1,34 @@
 <br><br><br>
-<h1><strong>Category:</strong> <%= @category.title %></h1>
+<div class = "b-container">
+    <center>
+    <div class="e-container" id="middle">
+        <table class="table is-bordered is-fullwidth">
+            <tbody>
+                <tr class ="test">
+                    <td class><%=@category.title%></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td  class = "details-container"><%=@category.details%></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
 
-<p><strong> Details:</strong> <%= @category.details %></p>
 
-
-<p><%= link_to "Edit", edit_category_path(@category) %>
+<p><%= link_to "Edit", edit_category_path(@category), class: "button is-link" %>
 <%= link_to "Destroy", category_path(@category),
                         method: :delete,
-                        data: { confirm: "Are you sure?" } %> 
-<%= link_to "Back", categories_path %>        </p>                
-<br><br><br>
+                        data: { confirm: "Are you sure?" },
+                        class: "button is-link" %> 
+<%= link_to "Back", categories_path, class: "button is-link" %>        </p>    
+</center>
+</div>
 <%= render @category.tasks %>
-<br><br><br>
-<h2> Add tasks: </h2>
+<center>
+<div class="box c-container">
 <%= render 'tasks/form' %>
+</div>
+</center>

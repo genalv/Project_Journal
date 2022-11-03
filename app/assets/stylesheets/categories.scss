@@ -11,3 +11,26 @@
     height: 200px;
     overflow-y: auto;
 }
+
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+    background: #CECEFE;
+    border-radius: 40px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #33A1F1;
+    border-radius: 40px;
+}
+
+#middle{
+    position: relative;
+}
+
+.b-containter{
+    width: 100vw;
+}

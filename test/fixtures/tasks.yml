@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  details: MyString
+  title: TaskOne
+  details: TDetailOne
   category: one
 
 two:
-  title: MyString
-  details: MyString
+  title: TaskTwo
+  details: TDetailTwo
   category: two
